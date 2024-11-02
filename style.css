@@ -178,7 +178,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
   header {
-    font-size: 1em;
+    font-size: 4em;
   }
   .post-title {
     font-size: 1.5em;
