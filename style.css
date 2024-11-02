@@ -176,46 +176,4 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  header {
-    font-size: 1em;
-  }
-  .post-title {
-    font-size: 1.5em;
-  }
-  footer {
-    font-size: 0.8em;
-  }
-  nav {
-    display: flex;
-    flex-direction: row;
-  }
-  nav a {
-    font-size: 0.9em;
-    padding: 10px;
-    margin: 5px 0;
-  }
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-  }
-  .content {
-    width: 100%;
-    padding: 10px;
-  }
-  .nav {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav a {
-    margin: 5px 0;
-  }
-  .post-image,
-  .pticon {
-    width: 15%;
-    height: auto;
-  }
-}
+
