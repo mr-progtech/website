@@ -43,6 +43,8 @@ nav a:hover {
 }
 
 .container {
+  flex: 1;
+  overflow: scroll;
   display: flex;
   flex-direction: row;
   color: black;
