@@ -1,0 +1,177 @@
+body {
+  font-family: Comic Sans Ms, Segoe ui, Calibri;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 120%;
+  background-color: #333;
+  background-image: url("images/header_background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+}
+
+nav {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: left;
+  background-color: #444;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  padding-right: 0;
+  width: 70%;
+}
+
+.border {
+  border-bottom: 1px solid #999999;
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  top: 0;
+  height: 100vh;
+  position: sticky;
+  width: 30%;
+  padding: 20px;
+  padding-right: 0;
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.sidebar ul {
+  padding-left: 40px;
+  margin-top: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 5px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar ul li a:hover {
+  color: #333;
+  font-size: 105%;
+  font-weight: bold;
+}
+
+.post-title {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.post-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: #4f4f4f;
+  font-size: 99%;
+  text-decoration: none;
+}
+
+.post-subtitle {
+  padding-top: 10px;
+  font-size: 1.5em;
+}
+
+.post-content {
+  margin: 20px 0;
+}
+
+.post-image {
+  width: 60%;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-image {
+  width: 30%;
+  max-width: 90%;
+  height: auto;
+}
+
+.pticon {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+}
+
+.code-snippet {
+  width: 70%;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.code-snippet pre {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+footer {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  bottom: 0;
+  width: 100%; 
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
