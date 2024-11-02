@@ -176,9 +176,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 2500px) {
+@media (max-width: 768px) {
   header {
-    font-size: 2em;
+    font-size: 1em;
   }
   .post-title {
     font-size: 1.5em;
