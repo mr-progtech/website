@@ -1,9 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: -webkit-fill-avaiable;
   overflow-x: hidden;
 }
 
+
 body {
+  overflow-x: hidden;
   font-family: Comic Sans Ms, Segoe ui, Calibri;
   margin: 0;
   padding: 0;
@@ -25,18 +31,18 @@ header {
 }
 
 nav {
-  font-size: 1.5em;
+  font-size: 150%;
   display: flex;
   justify-content: left;
   background-color: #444;
-  padding: 10px 0;
+  padding: 2% 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  padding: 10px;
+  margin: 0 3%;
+  padding: 1%;
 }
 
 nav a:hover {
@@ -54,7 +60,7 @@ nav a:hover {
 
 .content {
   flex-grow: 1;
-  padding: 20px;
+  padding: 3%;
   padding-right: 0;
   width: 70%;
 }
@@ -69,7 +75,7 @@ nav a:hover {
   height: 100vh;
   position: sticky;
   width: 30%;
-  padding: 20px;
+  padding: 3%;
   padding-right: 0;
 }
 
@@ -80,16 +86,15 @@ nav a:hover {
 
 .sidebar h2 {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
+  padding-bottom: 10%;
 }
 
 .sidebar ul {
-  padding-left: 40px;
   margin-top: 0;
 }
 
 .sidebar ul li {
-  margin-bottom: 5px;
+  margin-bottom: 2%;
 }
 
 .sidebar ul li a {
@@ -120,17 +125,18 @@ nav a:hover {
 }
 
 .post-subtitle {
-  padding-top: 10px;
+  padding-top: 5%;
   font-size: 1.5em;
 }
 
 .post-content {
-  margin: 20px 0;
+  width: 60%;
+  margin: 3% 0;
 }
 
 .post-image {
-  width: 60%;
-  max-width: 100%;
+  width: 50%;
+  max-width: 60%;
   height: auto;
 }
 
@@ -141,7 +147,7 @@ nav a:hover {
 }
 
 .pticon {
-  width: 100px;
+  width: 20%;
   height: auto;
   position: absolute;
   top: 50%;
@@ -150,7 +156,7 @@ nav a:hover {
 }
 
 .code-snippet {
-  width: 70%;
+  width: 60%;
   background-color: #f4f4f4;
   border: 1px solid #ccc;
   padding: 10px;
@@ -167,7 +173,7 @@ footer {
   background-color: #444;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 3%;
   font-size: 0.9em;
   bottom: 0;
   width: 100%;
@@ -180,4 +186,9 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+  .pticon {
+    width: 6%;}
 }
