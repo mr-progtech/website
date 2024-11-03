@@ -34,7 +34,7 @@ nav {
   display: flex;
   justify-content: left;
   background-color: #444;
-  padding: 1% 0;
+  padding: 2.5% 0;
 }
 
 nav a {
@@ -91,6 +91,7 @@ nav a:hover {
 }
 
 .sidebar ul {
+  padding-left: 20%;
   margin-top: 0;
 }
 
@@ -135,11 +136,16 @@ nav a:hover {
   margin: 3% 0;
 }
 .home-about {
-  width: 150%;
+  width: 120%;
 }
 
 .post-image {
   width: 50%;
+  height: auto;
+}
+
+.home-image{
+  width: 100%;
   height: auto;
 }
 
@@ -210,15 +216,22 @@ footer a:hover {
   .about-image {
     width: 30%;
   }
+  .home-image{
+    width: 50%;
+    height: auto;
+  }
   .post-subtitle {
     padding-top: 0;
   }
   .sidebar {
-    width: 110vh;
+    width: 40%;
     padding: 1%;
     padding-right: 0;
   }
   .sidebar h2 {
     padding-bottom: 3%;
+  }
+  .sidebar ul{
+    padding-left: 10% ;
   }
 }
