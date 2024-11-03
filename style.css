@@ -1,5 +1,6 @@
-html{
+html {
   height: -webkit-fill-avaiable;
+  overflow-x: hidden;
 }
 
 body {
@@ -180,4 +181,3 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
