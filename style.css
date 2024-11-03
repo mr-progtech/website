@@ -144,7 +144,7 @@ nav a:hover {
   height: auto;
 }
 
-.home-image{
+.home-image {
   width: 110%;
   height: auto;
 }
@@ -208,15 +208,19 @@ footer a:hover {
     text-align: center;
     position: relative;
   }
+  nav {
+    padding: 20px 20px;
+  }
   nav a {
     color: white;
     text-decoration: none;
-    margin: 0 1.5%;
+    margin: 0;
+    margin-right: 40px;
   }
   .about-image {
     width: 30%;
   }
-  .home-image{
+  .home-image {
     width: 60%;
     height: auto;
   }
@@ -231,7 +235,7 @@ footer a:hover {
   .sidebar h2 {
     padding-bottom: 3%;
   }
-  .sidebar ul{
-    padding-left: 10% ;
+  .sidebar ul {
+    padding-left: 10%;
   }
 }
