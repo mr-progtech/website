@@ -34,7 +34,7 @@ nav {
   display: flex;
   justify-content: left;
   background-color: #444;
-  padding: 2.5% 0;
+  padding: 3% 2%;
 }
 
 nav a {
@@ -63,7 +63,6 @@ nav a:hover {
   padding-right: 0;
   max-width: 70%;
 }
-
 .border {
   border-bottom: 1px solid #999999;
 }
@@ -73,7 +72,7 @@ nav a:hover {
   top: 0;
   height: 100vh;
   position: sticky;
-  width: 110vh;
+  width: 75vh;
   padding: 3%;
   padding-right: 0;
 }
@@ -111,7 +110,6 @@ nav a:hover {
 }
 
 .post-title {
-  font-size: 2em;
   margin-top: 0;
 }
 
@@ -127,7 +125,7 @@ nav a:hover {
 }
 
 .post-subtitle {
-  font-size: 1.5em;
+  font-size: 100%;
 }
 
 .post-content {
@@ -223,8 +221,12 @@ footer a:hover {
     width: 60%;
     height: auto;
   }
+  .post-title {
+    font-size: 2em;
+  }
   .post-subtitle {
     padding-top: 0;
+    font-size: 1.5em;
   }
   .sidebar {
     width: 40%;
