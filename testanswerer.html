@@ -4,38 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test answerer</title>
-    <meta
-      name="keywords"
-      content="Mr. Progtech, mr. progtech, progtech, arduino, Arduino, tech, test, test answerer"
-    />
-    <link rel="shortcut icon" type="image/png" href="images/pticon.png" />
-  </head>
-
-  <body>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/ptimage.png" />
+  </head>
+  <body>
     <header>
-      <a href="index.html"
-        ><img class="pticon" src="images/ptimage.png" alt="mr. progtech logo"
-      /></a>
-      <h1>Mr. Progtech</h1>
+      <div class="logo">
+        <a href="index.html"><img class="logo" src="images/ptimage.png" alt="Mr. Progtech logo" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-    </nav>
-
-    <div class="container">
-      <div class="content-wrapper">
-        <div class="content">
-          <h1 class="post-title">Test answerer</h1>
-          <p class="post-content">
+    <main>
+      <section class="homecontent">
+        <div class="contentwrapper">
+          <h1>Test answerer</h1>
+          <p>
             Has it ever happened to you that you didn't know the questions for
-            the test? <br>
+            the test? <br />
             I have a solution for this situation!
           </p>
+        </div>
 
-          <h2 class="post-subtitle">What you will need:</h2>
+        <div class="contentwrapper">
+          <h3>What you will need:</h3>
           <ul>
             <li>arduino</li>
             <li>some wires</li>
@@ -46,26 +43,29 @@
           </ul>
           <a href="images/testanswerer/elements.jpg"
             ><img
-              class="post-image"
+              class="homeimg"
               src="images/testanswerer/elements.jpg"
               alt="Példa kép"
               style="border: 1px solid #c2c2c2"
             />
           </a>
+        </div>
 
-          <h2 class="post-subtitle">Circuit:</h2>
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
           <a href="images/testanswerer/circuit.png"
             ><img
-              class="post-image"
+              class="homeimg"
               src="images/testanswerer/circuit.png"
               alt="Példa kép"
             />
           </a>
-          <p class="post-content">We connect the button to D5 and the LEDs to D2, D3 and D4.</p>
+          <p>We connect the button to D5 and the LEDs to D2, D3 and D4.</p>
+        </div>
 
-          <h2 class="post-subtitle">Code:</h2>
-          <div class="code-snippet">
-            <pre><code>
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <pre><code>
             const int button = 5;  // Button to D5
             const int ledR = 2;    // First LED to D2
             const int ledG = 3;    // Second LED to D3
@@ -120,16 +120,26 @@
               }
             } 
             </code></pre>
-          </div>
-          <h2 class="post-subtitle">Result:</h2>
-          <video width="50%" controls>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="homeimg" controls>
             <source src="images/testanswerer/result.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-      </div>
-    </div>
+      </section>
 
+      <aside>
+        <h2>All posts</h2>
+        <ul>
+          <li><a href="testanswerer.html">Test answerer</a></li>
+          <li><a href="#">Post 2</a></li>
+          <li><a href="#">Post 3</a></li>
+        </ul>
+      </aside>
+    </main>
     <footer>
       <p>
         Contacts:
@@ -137,7 +147,7 @@
           >mr.progtech@gmail.com</a
         >
       </p>
-      <p>&copy; 2024 Mr. Progtech - All rights reserved.</p>
+      <p>&copy; 2024 Mr. Progtech - All rigths reserved</p>
     </footer>
   </body>
 </html>
