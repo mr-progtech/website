@@ -4,52 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <meta
-      name="keywords"
-      content="Mr. Progtech, mr. progtech, progtech, arduino, Arduino, tech"
-    />
-    <link rel="shortcut icon" type="image/png" href="images/pticon.png" />
-  </head>
-
-  <body>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/ptimage.png" />
+  </head>
+  <body>
     <header>
-      <a href="index.html"
-        ><img class="pticon" src="images/ptimage.png" alt="mr. progtech logo"
-      /></a>
-      <h1>Mr. Progtech</h1>
+      <div class="logo">
+        <a href="index.html"
+          ><img class="logo" src="images/ptimage.png" alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-    </nav>
-
-    <div class="container">
-      <div class="content-wrapper">
-        <div class="content">
-          <h2 class="post-title">
-            <a href="testanswerer.html">Test answerer</a>
-          </h2>
+    <main>
+      <section class="homecontent">
+        <div class="contentwrapper">
+          <h1>Recent Posts</h1>
           <a href="testanswerer.html">
-            <img
-              class="home-image"
-              src="images/testanswerer.jpg"
-              alt="Test"
-            />
+            <h3>Test answerer</h3>
           </a>
+          <a href="testanswerer.html">
+            <img src="images/testanswerer.jpg" alt="A test" class="homeimg"
+          /></a>
         </div>
-      </div>
-
-      <div class="sidebar">
+      </section>
+      <aside>
         <h2>All posts</h2>
         <ul>
           <li><a href="testanswerer.html">Test answerer</a></li>
-          <li><a href="#post2">Post 2</a></li>
-          <li><a href="#post3">Post 3</a></li>
+          <li><a href="#">Post 2</a></li>
+          <li><a href="#">Post 3</a></li>
         </ul>
-      </div>
-    </div>
+      </aside>
+    </main>
     <footer>
       <p>
         Contacts:
@@ -57,7 +50,7 @@
           >mr.progtech@gmail.com</a
         >
       </p>
-      <p>&copy; 2024 Mr. Progtech - All rights reserved.</p>
+      <p>&copy; 2024 Mr. Progtech - All rigths reserved</p>
     </footer>
   </body>
 </html>
