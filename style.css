@@ -156,6 +156,10 @@ footer a:hover {
     flex-direction: column;
   }
 
+  .homecontent {
+    width: 100%;
+  }
+
   .homeimg {
     max-width: 200px;
   }
