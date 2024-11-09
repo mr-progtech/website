@@ -97,7 +97,7 @@ main {
   object-fit: cover;
 }
 
-.content-video{
+.content-video {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -105,6 +105,22 @@ main {
   margin-top: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   object-fit: cover;
+}
+
+.cardwrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  max-width: 400px;
+  background: #efefef;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 pre {
@@ -172,7 +188,7 @@ footer a:hover {
     max-width: 200px;
   }
 
-  .content-video{
+  .content-video {
     max-width: 300px;
   }
 
