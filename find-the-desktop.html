@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the desktop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/pticon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"
+          ><img class="logo" src="images/ptimage.png" alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>Find the desktop!</h1>
+          <p>
+            Has it ever happened to you that you should have been working or
+            studying and when someone entered your room you were doing something
+            else on your computer?<br />
+            I have a solution for this situation!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>What you will need:</h3>
+          <ul>
+            <li>arduino 🙂</li>
+            <li>3 wires</li>
+            <li>a PIR motion sensor</li>
+            <li>your computer</li>
+          </ul>
+          <a href="images/find-the-desktop/elements.jpg"
+            ><img
+              class="content-image"
+              src="images/find-the-desktop/elements.jpg"
+              alt="Példa kép"
+              style="border: 1px solid #c2c2c2"
+            />
+          </a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
+          <a href="images/find-the-desktop/circuit.png"
+            ><img
+              class="content-image"
+              src="images/find-the-desktop/circuit.png"
+              alt="Példa kép"
+            />
+          </a>
+          <p>
+            We connect the PIR motion sensor to D2. <br>
+            <b
+              >Before connecting the motion sensor to the arduino, make sure
+              that the polarity is correct!</b
+            >
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <h4>Arduino:</h4>
+          <pre><code>
+    int motionSensor = 2; //Motio sensor to D2
+    int motionDetection;
+    
+    void setup()
+    {
+      pinMode(motionSensor, INPUT);
+      Serial.begin(9600);
+    }
+    
+    void loop()
+    {
+      motionDetection = digitalRead(motionSensor); //We save the value of the PIR motion sensor in this variable. It can be only 0 or 1.
+      if(motionDetection == 1){
+        Serial.println(motionDetection);
+        delay(1250);
+      }// We send this value to our computer.
+    }
+             
+            </code></pre>
+          <br />
+          <h4>Computer(python):</h4>
+          <pre><code>
+    import pyautogui
+    import serial
+    
+    def show_desktop():
+        pyautogui.hotkey('win', 'm') #This bring us to the desktop
+    
+    arduino = serial.Serial('COM3', 9600, timeout=.1)
+    
+    while True:
+        # Read data from the arduino
+        rawdata = arduino.readline()
+        data = str(rawdata.decode('utf-8')).strip()
+        print(data)
+    
+        # If motion detected we see the desktop
+        if data == '1':
+            show_desktop()
+            </code></pre>
+            <p>Before you run this code install the pyautogui library - pip install pyautogui</p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="content-video" controls>
+            <source src="images/find-the-desktop/result.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <aside>
+        <h2>All posts</h2>
+        <ul>
+          <li><a href="testanswerer.html">Test answerer</a></li>
+          <li><a href="#">Find the desktop</a></li>
+          <li><a href="#">Post 3</a></li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rigths reserved</p>
+    </footer>
+  </body>
+</html>
