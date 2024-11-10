@@ -114,13 +114,30 @@ main {
 }
 
 .card {
-  max-width: 400px;
   background: #efefef;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  transform: translateY(+5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-image {
+  height: 100%;
+  max-height: 100px;
+  width: auto;
+  border-radius: 15%;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
 }
 
 pre {
