@@ -76,13 +76,12 @@ main {
 .content h3 {
   font-size: 1.5rem;
 }
+
 .content a {
-  color: #333;
+  color: #d39104;
   text-decoration: none;
 }
-.content a:hover {
-  color: #d39104;
-}
+
 .content ul {
   padding-left: 20px;
 }
@@ -124,10 +123,12 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #333;
 }
 .card:hover {
   transform: translateY(+5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #d39104;
 }
 
 .home-image {
