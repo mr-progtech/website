@@ -70,6 +70,7 @@ main {
   padding-right: 1rem;
   width: 70%;
 }
+
 .content h1 {
   font-size: 2rem;
 }
@@ -200,6 +201,10 @@ footer a:hover {
 
   .content {
     width: 100%;
+  }
+
+  .about p {
+    text-indent: 1.5em;
   }
 
   .content-image {
