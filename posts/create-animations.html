@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create animations</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"
+          ><img class="logo" src="../images/ptimage.png" alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>Create animations</h1>
+          <p>
+            You like drawing and designing or you just want to spice up your
+            project with an animation?<br />
+            I have two solution for you!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3 style="font-style: italic; text-decoration: underline">
+            Solution 1. (the easier)
+          </h3>
+          <h3>What you will need:</h3>
+          <ul>
+            <li>arduino</li>
+            <li>4 wires</li>
+            <li>an oled display</li>
+          </ul>
+          <a href="../images/create-animations/elements.jpg"
+            ><img
+              class="content-image"
+              src="../images/create-animations/elements.jpg"
+              alt="Példa kép"
+              style="border: 1px solid #c2c2c2"
+            />
+          </a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
+          <a href="../images/create-animations/circuit.png"
+            ><img
+              class="content-image"
+              src="../images/create-animations/circuit.png"
+              alt="Példa kép"
+            />
+          </a>
+          <p>
+            We connect SCL to SCL and SDA to SDA(or SCL to A5 and SDA to A4).
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <p>
+            Go to
+            <a href="https://animator.wokwi.com/">animator.wokwi.com</a> and
+            choose your animation and the size of the oled display. Then click
+            "GET THE CODE>" and paste the code into the Arduino IDE.
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="content-video" controls>
+            <source
+              src="../images/create-animations/result.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="contentwrapper">
+          <h3 style="font-style: italic; text-decoration: underline">
+            Solution 2.
+          </h3>
+          <p>
+            We will make an animation from pictures. Everything will be the
+            same, only the code will change.
+          </p>
+          <h3>Code:</h3>
+          <p>Copy and paste this code into the Arduino IDE:</p>
+          <pre><code>
+    #include &lt;Adafruit_GFX.h&gt;
+    #include &lt;Adafruit_SSD1306.h&gt;
+
+    #define SCREEN_I2C_ADDRESS 0x3C // or try 0x3D
+    #define SCREEN_WIDTH 128     
+    #define SCREEN_HEIGHT 64     
+    #define RESET_PIN -1     
+    #define FRAME_DELAY 100 // Choose the delay between frames      
+
+    Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, RESET_PIN);
+          </code></pre>
+          <ul>
+            <li>
+              Go to
+              <a href="https://javl.github.io/image2cpp/"
+                >javl.github.io/image2cpp</a
+              >.
+            </li>
+            <li>
+              Choose your images, set background color to black and choose
+              "scale to fit keeping proportions" at scaling
+            </li>
+            <li>
+              Check the "invert image color" box(I also recommend checking the
+              vertically and horizontally boxes at "center image")
+            </li>
+            <li>Set the "canvas size" to the size of your oled display</li>
+            <li>Then click "Generate code" and "Copy Output"</li>
+            <li>Paste it into the Arduino IDE</li>
+          </ul>
+          <p>
+            Now paste this code into your Arduino IDE and edit it for yourself:
+          </p>
+          <pre><code>
+    void setup() {
+      display.begin(SSD1306_SWITCHCAPVCC, SCREEN_I2C_ADDRESS);
+    }
+            
+    void loop() {
+      display.clearDisplay();
+      display.drawBitmap(0, 0, nameOfFrame1, SCREEN_WIDTH, SCREEN_HEIGHT, 1); // Change the nameOfFrame1! 
+      display.display();
+      delay(FRAME_DELAY);
+      display.clearDisplay();
+      display.drawBitmap(0, 0, nameOfFrame2, SCREEN_WIDTH, SCREEN_HEIGHT, 1); // Change the nameOfFrame2! 
+      display.display();
+      delay(FRAME_DELAY);
+      display.clearDisplay();
+      display.drawBitmap(0, 0, nameOfFrame3, SCREEN_WIDTH, SCREEN_HEIGHT, 1); // Change the nameOfFrame3! 
+      display.display();
+      delay(FRAME_DELAY);
+
+      //If you have more frames add more of these:
+      /*
+      display.clearDisplay();
+      display.drawBitmap(0, 0, nameOfFrame3, SCREEN_WIDTH, SCREEN_HEIGHT, 1); // Change the nameOfFrame3! 
+      display.display();
+      delay(FRAME_DELAY);
+      */
+    }     </code></pre>
+        </div>
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="content-video" controls>
+            <source
+              src="../images/create-animations/result2.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>

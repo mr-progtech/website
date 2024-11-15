@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test answerer</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"><img class="logo" src="../images/ptimage.png" alt="Mr. Progtech logo" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>Test answerer</h1>
+          <p>
+            Has it ever happened to you that you didn't know the questions for
+            the test? <br />
+            I have a solution for this situation!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>What you will need:</h3>
+          <ul>
+            <li>arduino</li>
+            <li>some wires</li>
+            <li>a button</li>
+            <li>3 LEDs</li>
+            <li>4 resistor</li>
+            <li>some stickers or little papers</li>
+          </ul>
+          <a href="../images/testanswerer/elements.jpg"
+            ><img
+              class="content-image"
+              src="../images/testanswerer/elements.jpg"
+              alt="Példa kép"
+              style="border: 1px solid #c2c2c2"
+            />
+          </a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
+          <a href="../images/testanswerer/circuit.png"
+            ><img
+              class="content-image"
+              src="../images/testanswerer/circuit.png"
+              alt="Példa kép"
+            />
+          </a>
+          <p>We connect the button to D5 and the LEDs to D2, D3 and D4.</p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <pre><code>
+    const int button = 5;  // Button to D5
+    const int ledR = 2;    // First LED to D2
+    const int ledG = 3;    // Second LED to D3
+    const int ledY = 4;    // Third LED to D4
+    
+    int buttonState;
+    int answer;
+    
+    void setup() {
+      pinMode(button, INPUT);
+      pinMode(ledR, OUTPUT);
+      pinMode(ledG, OUTPUT);
+      pinMode(ledY, OUTPUT);
+    }
+    
+    void loop(){
+      buttonState = digitalRead(button); // We save the value of the button in this variable. It can be only 0 or 1.
+      
+      if (buttonState == 1){
+        for (int i = 1; i <= 3; i++){
+          digitalWrite(ledR, 1);
+          digitalWrite(ledG, 0);
+          digitalWrite(ledY, 0);
+          delay(100);
+          digitalWrite(ledR, 0);
+          digitalWrite(ledG, 1);
+          digitalWrite(ledY, 0);
+          delay(100);
+          digitalWrite(ledR, 0);
+          digitalWrite(ledG, 0);
+          digitalWrite(ledY, 1);
+          delay(100);
+        } // We make the LEDs flash.
+    
+        answer = random(1, 3+1); // We generate a random number from 1 to 3.
+    
+        if (answer == 1){
+          digitalWrite(ledR, 1);
+          digitalWrite(ledG, 0);
+          digitalWrite(ledY, 0);
+        }
+        else if (answer == 2){
+          digitalWrite(ledR, 0);
+          digitalWrite(ledG, 1);
+          digitalWrite(ledY, 0);
+        }
+        else{
+          digitalWrite(ledR, 0);
+          digitalWrite(ledG, 0);
+          digitalWrite(ledY, 1);
+        }// The illuminated LED shows the number of the answer.
+      }
+    } 
+            </code></pre>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="content-video" controls>
+            <source src="../images/testanswerer/result.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>
