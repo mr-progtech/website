@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resistors</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"
+          ><img
+            class="logo"
+            src="../images/ptimage.png"
+            alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>How to find the best resistor?</h1>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Resistor</h3>
+          <p>First of all what is a resistor?</p>
+          <p>
+            A <b>resistor</b> is a passive two-terminal electrical component,
+            which is mostly used to reduce current flow, to divide voltages.
+          </p>
+          <img
+            class="content-image"
+            src="../images/resistors/resistor.jpg"
+            alt="A resitor"
+          />
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Calculate the resistance</h3>
+          <p>The unit of resistance is <b>Ohm</b>(Ω).</p>
+          <p>
+            It was named after a German physicist and mathematician, Georg Simon
+            Ohm.
+          </p>
+          <h4>How to calculate the resistance?</h4>
+          <p>R = U/I</p>
+          <p>What does it mean?</p>
+          <ul>
+            <li>R: Resistance</li>
+            <li>U: Voltage</li>
+            <li>I: Current</li>
+          </ul>
+          <a href="https://en.wikipedia.org/wiki/Georg_Ohm"><img
+            class="content-image"
+            src="../images/resistors/ohm.jpg"
+            alt="Georg Simon
+            Ohm"
+          /></a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Use in everyday life</h3>
+          <p>Let's calculate the resistance of an arbitrary consumer!</p>
+          <ul>
+            <li>U = 10V</li>
+            <li>I = 2A</li>
+            <li>R = ?</li>
+          </ul>
+          <p>R = U/I = 10V / 2A = 5Ω</p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>What about LEDs?</h3>
+          <p>
+            The formula will be a little different here:
+            <br /><b>R = (U<sub>s</sub> - U<sub>LED</sub>) / I<sub>LED</sub></b>
+          </p>
+          <p>
+            A typical red LED has a voltage of 2V and a current of 10mA(0.01A).
+            We power it by 5V.
+          </p>
+          <p>
+            Let's substitute the values: <br />
+            R = (5V - 2V) / 0.01A = 300Ω
+          </p>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>
