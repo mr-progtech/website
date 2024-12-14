@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="animations, Progtech, arduino, picture, designing, cool animation, create"
+    />
+    <meta
+      name="description"
+      content="You like drawing and designing or you just want to spice up your
+            project with an animation? I have two solution for you!"
+    />
+    <title>Snack theft detector</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"
+          ><img
+            class="logo"
+            src="../images/ptimage.png"
+            alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>Snack theft detector</h1>
+          <p>
+            Has it ever happened to you, that someone stole your favorite
+            snack or chocolate?<br />
+            I have a solution for you!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>What you will need:</h3>
+          <ul>
+            <li>arduino</li>
+            <li>a breadboard</li>
+            <li>an infrared obstacle avoidance sensor</li>
+            <li>a passive buzzer</li>
+            <li>some wires</li>
+            <li>some LEDs</li>
+          </ul>
+          <a href="../images/snack-theft-detector/elements.jpg"
+            ><img
+              class="content-image"
+              src="../images/snack-theft-detector/elements.jpg"
+              alt="elements"
+              style="border: 1px solid #c2c2c2"
+            />
+          </a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
+          <a href="../images/snack-theft-detector/circuit.jpg"
+            ><img
+              class="content-image"
+              src="../images/snack-theft-detector/circuit.jpg"
+              alt="circuit"
+            />
+          </a>
+          <p>
+            We connect the buzzer to D5, the IR sensor to D4, one LED to D2 and
+            another LED to D3.
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <pre><code>
+    int led1 = 2; // First LED to D2
+    int led2 = 3; // Second LED to D3
+    int infraredPin = 4; // IR sensor to D4
+    int buzzerPin = 5; // Passive buzzer to D5
+    int objectDetection;
+
+    void setup() {
+      pinMode(led1, OUTPUT);
+      pinMode(led2, OUTPUT);
+      pinMode(infraredPin, INPUT);
+      pinMode(buzzerPin, OUTPUT);
+    }
+
+    void loop() { 
+      objectDetection = digitalRead(infraredPin); //We save the value of the IR obstacle avoidance sensor in this variable. It can be only 0 or 1.
+      
+      // When the sensor detects an object the arduino plays a melody and turns on the LEDs.
+      if (objectDetection == 0){ 
+        tone(buzzerPin, 1000, 100);
+        digitalWrite(led1, 1);
+        digitalWrite(led2, 0);
+        delay(50);
+        tone(buzzerPin, 970, 100);
+        digitalWrite(led1, 0);
+        digitalWrite(led2, 1);
+        delay(50);
+      }
+      else{
+        noTone(buzzerPin);
+        digitalWrite(led1, 0);
+        digitalWrite(led2, 0);
+      }
+    }
+</code></pre>
+        <p>Just upload the code to your arduino, and put the sensor under your snack!</p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <video class="content-video" controls>
+            <source
+              src="../images/snack-theft-detector/result.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>
