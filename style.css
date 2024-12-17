@@ -61,7 +61,7 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.about p{
+.about p {
   text-indent: 1.2rem;
 }
 
@@ -98,11 +98,13 @@ main {
   border-radius: 15%;
   margin-top: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   object-fit: cover;
 }
 
-a .content-image:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+a .content-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .content-video {
