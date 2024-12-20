@@ -172,6 +172,7 @@ aside ul {
 aside a {
   color: #333;
   text-decoration: none;
+  transition: color 0.5s ease;
 }
 aside a:hover {
   color: #d39104;
