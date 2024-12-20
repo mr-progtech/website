@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="snack, Progtech, arduino, IR, chocolate, thief, sensor, theft"
+    />
+    <meta
+      name="description"
+      content="Has it ever happened to you, that someone stole your favorite
+            snack or chocolate? I have a solution for you!"
+    />
+    <title>Arduino code basics</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"
+          ><img
+            class="logo"
+            src="../images/ptimage.png"
+            alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>Arduino code basics</h1>
+          <p>
+            You don't know how to start coding in Arduino IDE, or just want to
+            learn the basics of arduino programming? <br />
+            This page is for you!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Download the Arduino IDE</h3>
+          <p>To program the arduino, you need a software called Arduino IDE.</p>
+          <p>
+            You can download it from the
+            <a href="https://www.arduino.cc/en/software" target="_blank"
+              >arduino official website</a
+            >. I recommend downloading the latest version.
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Getting started</h3>
+          <p>
+            Before you begin coding, there are a few steps you need to complete.
+          </p>
+          <p>
+            First of all choose your board:
+            <li>Open Arduino IDE</li>
+            <li>Click "Tools"</li>
+            <li>Then "Boards", and select your board</li>
+          </p>
+          <p>
+            Now choose the port:
+            <li>Click "Tools"</li>
+            <li>Then click "Port", and select the port</li>
+          </p>
+          <a href="../images/arduino-code-basics/arduino-ide.png"
+            ><img
+              class="content-image"
+              src="../images/arduino-code-basics/arduino-ide.png"
+              alt="Arduino IDE"
+          /></a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Start coding</h3>
+
+          <p><b>Now let's start programming!</b> (I mean, soon)</p>
+          <p>When you open the code editor, you probably see this:</p>
+          <a href="../images/arduino-code-basics/arduino-ide2.png"
+            ><img
+              class="content-image"
+              src="../images/arduino-code-basics/arduino-ide2.png"
+              alt="Arduino IDE"
+          /></a>
+          <p>
+            What does it mean?
+            <li>
+              <code>void</code>: It is a type of function, which doesn't have a
+              return value. So when we run this, it doesn't give us any
+              value(integer, string).
+            </li>
+            <li>
+              <code>setup</code>: This is the name of the function. It runs
+              once, after each powerup of the Arduino board. We usually write
+              things into like: <code>pinMode()</code> or
+              <code>Serial.begin()</code>
+            </li>
+            <li>
+              <code>loop</code>: This funtion runs continuously from the power
+              on to the off.
+            </li>
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Blinking LED</h3>
+          <p>
+            We haven't done anything yet, so let's load some example code! 😊
+            <li>Click "File" in the IDE</li>
+            <li>Then choose "Examples", "Basics", "Blink"</li>
+            <li>
+              Last but not least upload the code by clicking on the arrow icon
+            </li>
+          </p>
+          <a href="../images/arduino-code-basics/arduino-ide3.png"
+            ><img
+              class="content-image"
+              src="../images/arduino-code-basics/arduino-ide3.png"
+              alt="Arduino IDE"
+          /></a>
+          <p><b>Hurray! The little LED on the arduino is blinking!</b></p>
+          <p>
+            So what does the code we uploaded mean?
+            <li><code>void setup()</code>: We already know this.</li>
+            <li>
+              <code>pinMode(LED_BUILTIN, OUTPUT)</code>: This is a function to
+              initialize a digital pin as an input or output. It has 2
+              parameters: pin(LED_BUILTIN; 1; 2; 3 etc.) and mode(INPUT;
+              OUTPUT).
+            </li>
+            <li><code>void loop()</code>: We already know this too.</li>
+            <li>
+              <code>digitalWrite(LED_BUILTIN, HIGH)</code>: This function writes
+              a value to a digital pin. So voltage of the pin will be set to 5V
+              (or 3V) for HIGH, and 0V for LOW. It needs 2 parameters: pin and
+              value(LOW, HIGH).
+            </li>
+            <li>
+              <code>delay(1000)</code>: This pauses all processes in the code.
+              It has one parameter: time (in ms).
+            </li>
+          </p>
+        </div>
+        <div class="contentwrapper">
+          <h3>Variables</h3>
+          <p>
+            The variables in the Arduino IDE are similar to the C++ and C
+            variables.
+          </p>
+          <p>
+            We use:
+            <li><code>int</code> for integers</li>
+            <li><code>char</code> for characters and strings</li>
+            <li><code>float</code> for floating-point numbers</li>
+            <li>
+              <code>double</code> for double precision floating point number (it
+              is the same as float on AVR arduino boards)
+            </li>
+            <li>
+              <code>bool</code> for represent logical values(true or false)
+            </li>
+          </p>
+        </div>
+        <div class="contentwrapper">
+          <h3>Functions</h3>
+          <p>
+            Here are some frequently used functions:
+            <li>
+              <code>pinMode()</code>: Configures a digital pin as input or an
+              output
+            </li>
+            <li>
+              <code>digitalWrite()</code>: Writes a value to a digital pin (LOW
+              or HIGH)
+            </li>
+            <li>
+              <code>digitalRead()</code>: Reads a value from a digital pin(LOW,
+              HIGH)
+            </li>
+            <li>
+              <code>analogWrite()</code>: Writes an analog value to a
+              pin(0-255)
+            </li>
+            <li>
+              <code>analogRead()</code>: Reads the value from an analog pin
+            </li>
+            <li>
+              <code>delay()</code>: Pauses the program for a specific time(in
+              ms)
+            </li>
+            <li><code>random()</code>: Generates a random number</li>
+            <li>
+              <code>Serial.begin()</code>: Sets the data rate in bits per second
+              data communication
+            </li>
+            <li>
+              <code>Serial.print()</code>: Prints data to the serial port, which
+              you can view on the serial monitor
+            </li>
+          </p>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>
