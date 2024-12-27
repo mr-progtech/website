@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'font from file';
+  src: url('Comic_Sans_MS/Comic_Sans_MS.ttf'); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +11,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: Comic Sans Ms, Segoe ui, Calibri;
+  font-family:  'font from file', Segoe ui;
   color: #333;
   line-height: 1.6;
   display: flex;
