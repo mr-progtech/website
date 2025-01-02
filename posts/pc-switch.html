@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="pc, computer, switch, button, turn on, turn off, Progtech, arduino, servo, sound, sound sensor"
+    />
+    <meta
+      name="description"
+      content="You are too lazy to turn on your computer by pressing a button? Need a more practical solution? I'll show you the BEST way to do it!"
+    />
+    <title>PC switch</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="shortcut icon" type="image/png" href="../images/pticon.png" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../index.html"
+          ><img
+            class="logo"
+            src="../images/ptimage.png"
+            alt="Mr. Progtech logo"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="contentwrapper">
+          <h1>PC switch</h1>
+          <p>
+            You are too lazy to turn on your computer by pressing a button? Need
+            a more practical solution?<br />
+            I'll show you the <b>BEST</b> way to do it!
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>What you will need:</h3>
+          <ul>
+            <li>arduino</li>
+            <li>6 wires</li>
+            <li>a servo motor</li>
+            <li>a sound sensor</li>
+            <li>some tape to stabilize the servo motor</li>
+          </ul>
+          <a href="../images/pc-switch/elements.png"
+            ><img
+              class="content-image"
+              src="../images/pc-switch/elements.png"
+              alt="elements"
+              style="border: 1px solid #c2c2c2"
+            />
+          </a>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Circuit:</h3>
+          <a href="../images/pc-switch/circuit.png"
+            ><img
+              class="content-image"
+              src="../images/pc-switch/circuit.png"
+              alt="circuit"
+            />
+          </a>
+          <p>
+            We connect the <b>servo motor</b> to 3.3V, GND and D3; and we
+            connect the <b>sound sensor</b> to 5V, GND and D2.
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Code:</h3>
+          <pre><code>
+    #include &ltServo.h&gt // We need to include this library to use the servo motor.
+
+    int soundPin = 2; // Sound sensor to D2.
+    int servoPin = 3; // Servo motor to D3.
+    int soundDetection;
+
+    Servo Myservo; // We name the servo.
+
+    void setup() {
+    pinMode(soundPin, INPUT);
+    Myservo.attach(servoPin);
+    }
+
+    void loop() {
+    soundDetection = digitalRead(soundPin); // We save the value of the sound sensor in this variable. It can be only 0 or 1.
+    
+    if (soundDetection == 1){ // If the sensor detects sound the servo moves.
+        Myservo.write(45);
+        delay(500);
+        Myservo.write(0);
+        delay(500);
+    }
+    }
+        </code></pre>
+          <p>
+            If something doesn't work, try to adjust the potentiometer of the sound sensor.
+          </p>
+        </div>
+
+        <div class="contentwrapper">
+          <h3>Result:</h3>
+          <p>I had to put some weight on the servo because the tape didn't hold it properly. 🙄</p>
+          <video class="content-video" controls>
+            <source src="../images/pc-switch/result.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <aside class="list"></aside>
+    </main>
+    <footer>
+      <p>
+        Contacts:
+        <a href="mailto:mr.progtech@gmail.com" target="_blank"
+          >mr.progtech@gmail.com</a
+        >
+      </p>
+      <p>&copy; 2024 Mr. Progtech - All rights reserved</p>
+    </footer>
+  </body>
+</html>
