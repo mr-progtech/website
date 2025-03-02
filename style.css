@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'font from file';
-  src: url('Comic_Sans_MS/Comic_Sans_MS.ttf'); 
+  font-family: "font from file";
+  src: url("Comic_Sans_MS/Comic_Sans_MS.ttf");
 }
 
 * {
@@ -11,8 +11,8 @@
 
 body {
   overflow-x: hidden;
-  font-family:  'font from file', Segoe ui;
-  color: #333;
+  font-family: "font from file", Segoe ui;
+  color: hsl(0 0 0 /0.8);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,31 @@ header {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  background-color: #efefef;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 1rem;
+}
+
+tr:nth-of-type(2n) {
+  background-color: hsl(0 0 0 / 0.1);
+}
+
+th {
+  color: #fff;
+  text-align: left;
+  background-color: hsl(0 0 0 /0.8);
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 header .logo {
@@ -119,7 +144,6 @@ a .content-image:hover {
   border-radius: 0%;
   margin-top: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
 }
 
 .cardwrapper {
@@ -128,9 +152,14 @@ a .content-image:hover {
   gap: 1rem;
 }
 
+.tablewrapper {
+  max-width: 100%;
+  overflow: auto;
+}
+
 .card {
   height: 200px;
-  background: #efefef;
+  background: hsl(0 0 0 / 0.1);
   padding: 0;
   border-radius: 8px;
   text-align: center;
@@ -140,7 +169,7 @@ a .content-image:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #333;
+  color: hsl(0 0 0 /0.8);
 }
 .card:hover {
   transform: translateY(+5px);
@@ -159,8 +188,9 @@ a .content-image:hover {
 }
 
 pre {
-  border-radius: 5%;
-  background-color: #f0f0f0;
+  border-radius: 15px;
+  background-color: hsl(0 0 0 / 0.05);
+  max-height: 1000px;
   overflow: auto;
 }
 
@@ -175,7 +205,7 @@ aside ul {
 }
 
 aside a {
-  color: #333;
+  color: hsl(0 0 0 /0.8);
   text-decoration: none;
   transition: color 0.5s ease;
 }
@@ -237,5 +267,17 @@ footer a:hover {
     padding-left: 0;
     border-left: none;
     border-top: 2px solid #f4f4f4;
+  }
+
+  pre {
+    max-height: 500px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .tablewrapper {
+    overflow: scroll;
   }
 }
